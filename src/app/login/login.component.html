@@ -1,11 +1,12 @@
-<h1>Login </h1>
-
-<form #loginForm="ngForm" (ngSubmit)="Login(loginForm.value)" class="text-center border border-light p-5">
-     <p class="h4 mb-4">Sign in</p>
-     <input type="text" ngModel name="username" required placeholder=" user name" class="form-control mb-4">
-     <input type="password" ngModel name="password" placeholder=" password" class="form-control mb-4">
-
-     <button block="true" class="my-4 btn btn-primary">Login</button>
+<form #loginForm="ngForm" (ngSubmit)="Login(loginForm.value)" class="card card-default">
+     <div class="card-header">Sign in</div>
+     <div class="card-body">
+          <input type="text" ngModel name="username" required placeholder=" user name" class="form-control mb-4">
+          <input type="password" ngModel name="password" placeholder=" password" class="form-control mb-4">
+     </div>
+     <div class="card-footer">
+          <button block="true" class="m-2 btn btn-primary">Login</button>
+     </div>
 
      <div *ngIf="!isValid">
           Wrong user name or password .

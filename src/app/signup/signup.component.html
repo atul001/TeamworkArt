@@ -1,0 +1,31 @@
+<form #signupForm="ngForm" class="card card-default mt-4">
+     <div class="card-header">
+          <h3>Sign-up</h3>
+     </div>
+     <div class="card-body">
+          <input type="text" ngModel name="username" placeholder=" user name" class="form-control mb-4">
+          <input type="password" ngModel name="password" placeholder=" password" class="form-control mb-4">
+          <input type="password" ngModel name="confirmpassword" placeholder=" confirm password"
+               class="form-control mb-4">
+     </div>
+     <div class="card-footer">
+          <button block="true" class="m-2 btn btn-success" (click)="Signup(signupForm.value)">Sign up</button>
+     </div>
+     <div class="alert alert-success m-3" *ngIf=" isExists">
+          User already exists.
+     </div>
+
+     <div class="m-3" *ngIf="otp >0">
+          <p style="font-size:16px;font-weight:bold">{{otp}}</p>
+          <input type="text" class="form-control" ngModel name="otp" placeholder="enter otp">
+          <button block="true" class="m-2 btn btn-success" (click)="ValidateOTP(signupForm.value)">Check otp</button>
+     </div>
+
+     <div class="alert alert-danger" *ngIf="isValidOTP ==0">
+          Invalid OTP.
+     </div>
+     <div class="alert alert-success" *ngIf="isValidOTP ==1">
+          Successfully activated account.
+     </div>
+
+</form>
